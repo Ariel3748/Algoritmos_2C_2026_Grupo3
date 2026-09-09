@@ -133,15 +133,13 @@ int productoEscalar(int array1[],int array2[],int longitud){
 
 //Ejercicio 31 
 
-int main(){
+void cargarAlumnos(int notas[], int &cantidadDeAlumnos) {
     int padron, nota;
-    int cantidadDeAlumnos = 0;
-    int notas[11] = {0};
 
-    cout << "Ingrese el padron y la nota (padron 0 para finalizar): "<< "\n";
+    cout << "Ingrese el padron y la nota (padron 0 para finalizar): " << "\n";
     cin >> padron;
 
-    while (padron != 0){
+    while (padron != 0) {
         cout << "Ingresa la nota: " << "\n";
         cin >> nota;
 
@@ -151,17 +149,34 @@ int main(){
         cout << "Ingrese el proximo padron:" << "\n";
         cin >> padron;
     }
-
-    cout << "Cantidad de alumnos: " << cantidadDeAlumnos << endl;
-
-    for (int i = 0; i <= 10; i++){
-        if (notas[i] > 0){
-            cout << "Nota " << i << ": " << (notas[i] * 100.0 / cantidadDeAlumnos) << "%" << endl;
-        }
-    }
-    return 0;
 }
 
+void mostrarCantidadAlumnos(int cantidadDeAlumnos) {
+    cout << "Cantidad de alumnos: " << cantidadDeAlumnos << endl;
+}
+
+void mostrarPorcentajes(int notas[], int cantidadDeAlumnos) {
+    for (int i = 0; i <= 10; i++) {
+        if (notas[i] > 0) {
+            cout << "Nota " << i << ": "
+                 << (notas[i] * 100.0 / cantidadDeAlumnos)
+                 << "%" << endl;
+        }
+    }
+}
+
+/*
+int main() {
+    int cantidadDeAlumnos = 0;
+    int notas[11] = {0};
+
+    cargarAlumnos(notas, cantidadDeAlumnos);
+    mostrarCantidadAlumnos(cantidadDeAlumnos);
+    mostrarPorcentajes(notas, cantidadDeAlumnos);
+
+    return 0;
+}
+*/
 
 //Ejercicio 32 
 
@@ -308,7 +323,7 @@ void cargarMatriz(int matriz[][MAX_COL], int m, int n) {
     sumarMatrices(A, B, C, m, n) */
 
 
-    //Ejercicio 35
+//Ejercicio 35
     /*
     int main() {
     const int MAX = 10;
