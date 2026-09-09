@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <cmath>
 using namespace std;
 
 
@@ -77,7 +78,7 @@ bool esPrimo(int n){
     return true; 
 } 
 
-//Ejrcicio 18
+//Ejrcicio 28
 
 int mcd(int n, int n2){
     while (n != 0) {
@@ -131,6 +132,36 @@ int productoEscalar(int array1[],int array2[],int longitud){
 
 
 //Ejercicio 31 
+
+int main(){
+    int padron, nota;
+    int cantidadDeAlumnos = 0;
+    int notas[11] = {0};
+
+    cout << "Ingrese el padron y la nota (padron 0 para finalizar): "<< "\n";
+    cin >> padron;
+
+    while (padron != 0){
+        cout << "Ingresa la nota: " << "\n";
+        cin >> nota;
+
+        cantidadDeAlumnos++;
+        notas[nota]++;
+
+        cout << "Ingrese el proximo padron:" << "\n";
+        cin >> padron;
+    }
+
+    cout << "Cantidad de alumnos: " << cantidadDeAlumnos << endl;
+
+    for (int i = 0; i <= 10; i++){
+        if (notas[i] > 0){
+            cout << "Nota " << i << ": " << (notas[i] * 100.0 / cantidadDeAlumnos) << "%" << endl;
+        }
+    }
+    return 0;
+}
+
 
 //Ejercicio 32 
 
