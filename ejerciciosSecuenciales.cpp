@@ -169,23 +169,34 @@ int main(int argc, char const *argv[])
 
     //Ejercicio 12
 
-/*     float n;
+/*     int n;
     const float MINUTO = 60;
     const float HORA = 3600;
     const float DIA = 86400;
 
+    float dias;
+    float horas;
+    float minutos;
+    float segundos;
+    int resto;
     cout << "Ingrese un numero expresado en segundos:  " <<"\n";
     cin >> n;
 
-    cout << "En dias: " << n / DIA <<"\n";
-    cout << "En horas: " << n / HORA <<"\n";
-    cout << "En minutos: " << n / MINUTO <<"\n";
+    dias = n / 86400;
+    resto = n % 86400;
+
+    horas = resto / 3600;
+    resto = resto % 3600;
+
+    minutos = resto / 60;
+    segundos = resto % 60;
+    cout << "En dias: " << dias <<"\n";
+    cout << "En horas: " << horas <<"\n";
+    cout << "En minutos: " << minutos <<"\n"; */
 
     //Creo que el ejercicio se refiere a que le pase nose 200.000 seg y me diga 2 dias, 3 horas, 5 minutos y 20 segundos
     //Tipo dividir por dias y el resto por horas y el resto por minutos y asi
 
-
-    */
 
 
     //Ejercicio 13
@@ -259,7 +270,46 @@ int main(int argc, char const *argv[])
 
 
     //Ejercicio17
-    //No me deja usar una varaible para definir el largo de un vector
+/*     int n;
+    cout << "Ingrese la cantidad de n a cargar" << "\n";
+    int mayor;
+    int menor;
+    int nMayor;
+    int nMenor;
+    for (int i = 0; i < n; i++)
+    {
+        int m;
+        cout << "Ingrese el valor del numero" << "\n";
+        cin >> m;
+        if(i==0){
+            mayor = m;
+            menor = m;
+            nMayor  ++;
+            nMenor ++;
+        }
+        else if (m>mayor)
+        {
+            mayor = m;
+            nMayor = 1;
+        }
+        else if (m<menor)
+        {
+            menor = m;
+            nMenor = 1;
+        }
+        else if (m==mayor)
+        {
+            nMayor ++;
+        }
+        else if (m==menor)
+        {
+            nMenor ++;
+        }
+        
+        
+        
+    }
+     */
 
     //Ejercicio 18
 /*     int n;
@@ -332,6 +382,9 @@ int main(int argc, char const *argv[])
     } while (nombreAux != "N") ; */
 
     //Ejercicio 21
+    
+
+
 
     //Ejercicio 22
 /*     cout << "Fahrenheit\tCelsius\n";
