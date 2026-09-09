@@ -183,8 +183,116 @@ void calcularUnion(int A[], int n, int B[], int m, int resultado[]) {
     }
 }
 
-
 //Ejercicio 34
+const int MAX_FIL = 50;
+const int MAX_COL = 50;
+
+// La dimensión de columnas es obligatoria en la declaración de parámetros de matrices nativas
+void sumarMatrices(int A[][MAX_COL], int B[][MAX_COL], int C[][MAX_COL], int m, int n) {
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < n; j++) {
+            C[i][j] = A[i][j] + B[i][j];
+        }
+    }
+}
+
+void cargarMatriz(int matriz[][MAX_COL], int m, int n) {
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < n; j++) {
+            cout << "[" << i << "][" << j << "]: ";
+            cin >> matriz[i][j];
+        }
+    }
+}
+
+//En el Main
+/* int A[MAX_FIL][MAX_COL];
+    int B[MAX_FIL][MAX_COL];
+    int C[MAX_FIL][MAX_COL];
+    int m, n;
+
+    cout << "Ingrese cantidad de filas (M <= " << MAX_FIL << "): ";
+    cin >> m;
+    cout << "Ingrese cantidad de columnas (N <= " << MAX_COL << "): ";
+    cin >> n;
+
+
+    cargarMatriz(A, m, n);
+    cargarMatriz(B, m, n);
+
+    sumarMatrices(A, B, C, m, n) */
+
+
+
+//Ejercicio36
+int sumarFilaIndividual(int fila[], int cantidadColumnas) {
+    int sumador = 0;
+    for (int j = 0; j < cantidadColumnas; j++) {
+        sumador += fila[j];
+    }
+    return sumador;
+}
+
+// m: filas reales, n: columnas reales
+void sumarFilas(int A[][MAX_COL], int C[], int m, int n) {
+    for (int i = 0; i < m; i++) {
+        C[i] = sumarFilaIndividual(A[i], n);
+    }
+}
+
+
+
+//Ejrcicio 37
+int sumarElementoDiagonal(int A[][MAX_COL], int m){
+    int traza = 0;
+    for (int i = 0; i < m; i++)
+    {
+        traza += A[i][i];
+
+    }
+    return traza;
+}
+
+
+//Ejercicio 38
+bool esIdentidad(int A[][MAX_COL], int n) {
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            //Diagonal principal 
+            if (i == j && A[i][j] != 1) {
+                return false;
+            }
+            //Fuera de la diagonal
+            if (i != j && A[i][j] != 0) {
+                return false;
+            }
+        }
+    }
+    return true;
+}
+
+//Ejercicio39
+
+int minimoEnFila(int fila[], int largoFila){
+    int aux;
+    for (int i = 0; i < largoFila; i++)
+    {
+        if(i==0 || fila[i] < aux){
+            aux = fila[i];
+        }
+    }
+    return aux;
+}
+
+// m: filas reales, n: columnas reales
+void vectorDeMenores(int matriz[][MAX_COL],int vector[], int largoVector, int m, int n){
+    for (int i = 0; i < m; i++)
+    {
+        vector[i] = minimoEnFila(matriz[i],n);
+    }
+
+}
+
 
 
 
