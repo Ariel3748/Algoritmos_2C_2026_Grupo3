@@ -9,6 +9,8 @@ struct Persona {
     string telefono; 
 };
 
+//Ejercicio 41
+
 //Uso cant para llevar registro la cantidad de contactos que tiene el vector
 void cargarContacto(Persona agenda[], int &cant){
     int n;

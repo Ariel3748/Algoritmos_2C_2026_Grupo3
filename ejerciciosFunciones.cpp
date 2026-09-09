@@ -308,6 +308,50 @@ void cargarMatriz(int matriz[][MAX_COL], int m, int n) {
     sumarMatrices(A, B, C, m, n) */
 
 
+    //Ejercicio 35
+    /*
+    int main() {
+    const int MAX = 10;
+    int A[MAX][MAX], B[MAX][MAX], C[MAX][MAX];
+    int M, N;
+
+    cout << "Ingrese la cantidad de filas: ";
+    cin >> M;
+
+    cout << "Ingrese la cantidad de columnas: ";
+    cin >> N;
+
+    cout << "Ingrese los elementos de la matriz A:" << endl;
+    for (int i = 0; i < M; i++) {
+        for (int j = 0; j < N; j++) {
+            cin >> A[i][j];
+        }
+    }
+
+    cout << "Ingrese los elementos de la matriz B:" << endl;
+    for (int i = 0; i < M; i++) {
+        for (int j = 0; j < N; j++) {
+            cin >> B[i][j];
+        }
+    }
+
+    for (int i = 0; i < M; i++) {
+        for (int j = 0; j < N; j++) {
+            C[i][j] = A[i][j] + B[i][j];
+        }
+    }
+
+    cout << "La matriz C es:" << endl;
+    for (int i = 0; i < M; i++) {
+        for (int j = 0; j < N; j++) {
+            cout << C[i][j] << " ";
+        }
+        cout << endl;
+    }
+
+    return 0;
+}
+*/
 
 //Ejercicio36
 int sumarFilaIndividual(int fila[], int cantidadColumnas) {
