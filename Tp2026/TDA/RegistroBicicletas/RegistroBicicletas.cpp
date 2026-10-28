@@ -1,40 +1,41 @@
 #include <RegistroBicicletas.h>
 
-class RegistroBicicletas
+Bicicleta* RegistroBicicletas::buscarBicicleta(int biciId)
 {
-  private:
-    ABB<Bicicleta> arbol;
 
-  public:
-    NodoABB<Bicicleta>* buscarBicicleta(int biciId)
-    {
+    Bicicleta auxiliar = Bicicleta(biciId, "PLZ", "Mecanica", "OK", 1240);
+    NodoABB<Bicicleta>* nodo = arbol.buscarABB(auxiliar, arbol.getRaiz());
+    return &nodo->getValor();
+}
 
-        Bicicleta auxiliar = Bicicleta(biciId, "PLZ", "Mecanica", "OK", 1240);
-        return arbol.buscarABB(auxiliar, arbol.getRaiz());
-    }
+void RegistroBicicletas::listarBicicletasEnOrden()
+{
+    auto listar = [](NodoABB<Bicicleta>* NodoBicicleta) {
+        Bicicleta aux = NodoBicicleta->getValor();
+        aux.mostrar();
+    };
 
-    void listarBicicletasEnOrden()
-    {
-        auto listar = [](NodoABB<Bicicleta>* NodoBicicleta) {
-            Bicicleta aux = NodoBicicleta->getDato();
-            aux.mostrar();
-        };
+    arbol.recorrer(arbol.getRaiz(), listar);
+}
 
-        arbol.recorrer(arbol.getRaiz(), listar);
-    }
+int RegistroBicicletas::contarBicicletasAveriadas()
+{
+    int contador = 0;
 
-    int contarBicicletasAveriadas()
-    {
-        int contador = 0;
+    auto sumador = [&contador](NodoABB<Bicicleta>* NodoBicicleta) {
+        Bicicleta aux = NodoBicicleta->getValor();
+        if (aux.estaAveriada())
+        {
+            contador = contador + 1;
+        }
+    };
 
-        auto sumador = [&contador](NodoABB<Bicicleta>* NodoBicicleta) {
-            Bicicleta aux = NodoBicicleta->getDato();
-            if (aux.estaAveriada())
-            {
-                contador = contador + 1;
-            }
-        };
+    arbol.recorrer(arbol.getRaiz(), sumador);
 
-        arbol.recorrer(arbol.getRaiz(), sumador);
-    }
-};
+    return contador;
+}
+
+void RegistroBicicletas::agregarBicicleta(Bicicleta bicicleta)
+{
+    arbol.insertarNodo(bicicleta, arbol.getRaiz());
+}

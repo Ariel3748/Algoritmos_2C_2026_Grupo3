@@ -1,21 +1,19 @@
 #ifndef ABB_H
 #define ABB_H
 
-
 // • Calcular la altura del árbol.
 // • Liberar toda la memoria del árbol al finalizar el programa (recorrido postorder).
 
 template <typename T> class NodoABB
 {
   private:
-    T dato;
+    T valor;
     NodoABB<T>* hijoIzquierdo;
     NodoABB<T>* hijoDerecho;
 
   public:
-    NodoABB(T dato)
+    NodoABB(T valor) : valor(valor)
     {
-        this->dato = dato;
         hijoIzquierdo = nullptr;
         hijoDerecho = nullptr;
     }
@@ -30,18 +28,19 @@ template <typename T> class NodoABB
         this->hijoDerecho = hijoDerecho;
     }
 
-    NodoABB*& getHijoIzquierdo()
+    NodoABB<T>*& getHijoIzquierdo()
     {
-        return this->hijoIzquierdo;
+        return hijoIzquierdo;
     }
 
-    NodoABB*& getHijoDerecho()
+    NodoABB<T>*& getHijoDerecho()
     {
-        return this->hijoDerecho;
+        return hijoDerecho;
     }
 
-    T& getDato(){
-        return this->dato;
+    T& getValor()
+    {
+        return valor;
     }
 };
 
@@ -51,56 +50,57 @@ template <typename T> class ABB
     NodoABB<T>* raiz;
 
   public:
-    ABB(T dato)
+    ABB()
     {
-        raiz = new NodoABB<T>(dato);
+        raiz = nullptr;
     }
 
-    NodoABB*& getRaiz(){
-        return this->raiz;
+    NodoABB<T>*& getRaiz()
+    {
+        return raiz;
     }
-    
-    void insertarNodo(T dato, NodoABB<T>*& raiz)
+
+    void insertarNodo(T valor, NodoABB<T>*& raiz)
     {
 
         if (raiz == nullptr)
         {
-            raiz = new NodoABB(dato);
+            raiz = new NodoABB<T>(valor);
             return;
         }
 
-        if (dato < raiz->getDato())
+        if (valor < raiz->getValor())
         {
-            insertarNodo(dato, raiz->getHijoIzquierdo());
+            insertarNodo(valor, raiz->getHijoIzquierdo());
+
         }
         else
         {
-            insertarNodo(dato, raiz->getHijoDerecha());
+            insertarNodo(valor, raiz->getHijoDerecho());
         };
     }
 
-    NodoABB<T>* buscarABB(T dato, NodoABB<T>* raiz)
+    NodoABB<T>* buscarABB(T valor, NodoABB<T>* raiz)
     {
-        // Encontramos el valor o llegamos al final sin valor.
-        if (raiz == nullptr || raiz->getDato() == dato)
+        if (raiz == nullptr || raiz->getValor() == valor)
         {
             return raiz;
         }
 
-        // Seguimos recorrido arbol.
-        if (dato < raiz->getDato())
+        if (valor < raiz->getValor())
         {
-            return buscarABB(dato, raiz->getHijoIzquierdo());
+            return buscarABB(valor, raiz->getHijoIzquierdo());
         }
         else
         {
-            return buscarABB(dato, raiz->getHijoDerecho());
+            return buscarABB(valor, raiz->getHijoDerecho());
         }
     }
 
-    template <typename FuncionAplicada>
-    void recorrer(NodoABB<T>* raiz, FuncionAplicada callback){
-        if(raiz != nullptr){
+    template <typename FuncionAplicada> void recorrer(NodoABB<T>* raiz, FuncionAplicada callback)
+    {
+        if (raiz != nullptr)
+        {
             recorrer(raiz->getHijoIzquierdo(), callback);
             callback(raiz);
             recorrer(raiz->getHijoDerecho(), callback);

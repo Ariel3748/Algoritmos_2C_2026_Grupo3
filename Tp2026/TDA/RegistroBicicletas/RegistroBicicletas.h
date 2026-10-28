@@ -6,7 +6,9 @@ class RegistroBicicletas{
        ABB<Bicicleta> arbol;
     
     public:
-        NodoABB<Bicicleta>* buscarBicicleta(int biciId);
+        Bicicleta* buscarBicicleta(int biciId);
         void listarBicicletasEnOrden();
         int contarBicicletasAveriadas();
+        void agregarBicicleta(Bicicleta bicicleta);
+
 };
