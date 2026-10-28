@@ -50,9 +50,13 @@ bool Bicicleta::esElectrica() {
     return tipo == "Electrica";
 }
 
-// Asi podemos comparar en el ABB
+// Overloading de operators para poder hacer comparaciones entre Bicicletas, sin tener que repetir llamados al getter.
 bool Bicicleta::operator<(Bicicleta& b){
     return this->getBiciId() < b.getBiciId();
+}
+
+bool Bicicleta::operator==(Bicicleta& b){
+    return this->getBiciId() == b.getBiciId();
 }
 
 void Bicicleta::mostrar() {

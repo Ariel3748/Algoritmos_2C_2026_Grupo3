@@ -30,6 +30,7 @@ public:
     void mostrar();
 
     bool operator<(Bicicleta& b);
+    bool operator==(Bicicleta& b);
     
 };
 
