@@ -50,6 +50,11 @@ bool Bicicleta::esElectrica() {
     return tipo == "Electrica";
 }
 
+// Asi podemos comparar en el ABB
+bool Bicicleta::operator<(Bicicleta& b){
+    return this->getBiciId() < b.getBiciId();
+}
+
 void Bicicleta::mostrar() {
     std::cout << "Bici " << biciId << " | " << codigoEstacion << " | "
               << tipo << " | " << estado << " | " << kilometros << " km"

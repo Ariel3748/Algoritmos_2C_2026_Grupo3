@@ -28,6 +28,9 @@ public:
     bool estaAveriada();
     bool esElectrica();
     void mostrar();
+
+    bool operator<(Bicicleta& b);
+    
 };
 
 #endif
