@@ -46,3 +46,22 @@ void Estacion::mostrar() {
               << " | capacidad: " << capacidadAnclajes
               << " | disponibles: " << bicisDisponibles << std::endl;
 }
+
+bool Estacion::retirarBici(int dni) {
+    if (bicisDisponibles > 0) {
+        bicisDisponibles--;
+        return true;
+    }
+    colaEspera.encolar(dni);  
+    return false;
+}
+
+void Estacion::devolverBici() {
+    if (!colaEspera.estaVacia()) {
+        int dni = colaEspera.desencolar();
+        std::cout << "Bici asignada al usuario " << dni << std::endl;
+        // la bici pasa directo al usuario: bicisDisponibles no cambia
+    } else {
+        bicisDisponibles++;
+    }
+}
