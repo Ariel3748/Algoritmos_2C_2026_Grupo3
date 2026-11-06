@@ -10,6 +10,7 @@ private:
     std::string tipo;     // "Mecanica" o "Electrica"
     std::string estado;   // "OK" o "Averiada"
     int kilometros;
+    int prioridadReparacion;
 
 public:
     Bicicleta(int biciId, std::string codigoEstacion, std::string tipo,
@@ -28,6 +29,8 @@ public:
     bool estaAveriada();
     bool esElectrica();
     void mostrar();
+    int getPrioridadReparacion();
+    void setPrioridadReparacion(int prioridad);
 };
 
 #endif

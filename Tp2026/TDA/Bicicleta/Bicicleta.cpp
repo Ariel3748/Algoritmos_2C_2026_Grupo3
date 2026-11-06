@@ -8,6 +8,7 @@ Bicicleta::Bicicleta(int biciId, std::string codigoEstacion, std::string tipo,
     this->tipo = tipo;
     this->estado = estado;
     this->kilometros = kilometros;
+    this->prioridadReparacion = 0;
 }
 
 int Bicicleta::getBiciId() {
@@ -30,6 +31,10 @@ int Bicicleta::getKilometros() {
     return kilometros;
 }
 
+int Bicicleta::getPrioridadReparacion() {
+    return prioridadReparacion;
+}
+
 void Bicicleta::setCodigoEstacion(std::string codigoEstacion) {
     this->codigoEstacion = codigoEstacion;
 }
@@ -40,6 +45,10 @@ void Bicicleta::setEstado(std::string estado) {
 
 void Bicicleta::setKilometros(int kilometros) {
     this->kilometros = kilometros;
+}
+
+void Bicicleta::setPrioridadReparacion(int prioridad) {
+    this->prioridadReparacion = prioridad;
 }
 
 bool Bicicleta::estaAveriada() {
