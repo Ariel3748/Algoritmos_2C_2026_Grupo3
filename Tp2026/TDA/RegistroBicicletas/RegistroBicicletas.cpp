@@ -39,3 +39,17 @@ void RegistroBicicletas::agregarBicicleta(Bicicleta bicicleta)
 {
     arbol.insertarNodo(bicicleta, arbol.getRaiz());
 }
+
+void RegistroBicicletas::listarBicicletasSegunKilometros(int kilometros)
+{
+
+    auto tieneMayorKilometraje = [&kilometros](NodoABB<Bicicleta>* NodoBicicleta) {
+        Bicicleta bicicleta = NodoBicicleta->getValor();
+        if (bicicleta.getKilometros() > kilometros)
+        {
+            bicicleta.mostrar();
+        }
+    };
+
+    arbol.recorrer(arbol.getRaiz(), tieneMayorKilometraje);
+}

@@ -1,8 +1,6 @@
 #ifndef ABB_H
 #define ABB_H
 
-// • Calcular la altura del árbol.
-// • Liberar toda la memoria del árbol al finalizar el programa (recorrido postorder).
 
 template <typename T> class NodoABB
 {

@@ -10,5 +10,6 @@ class RegistroBicicletas{
         void listarBicicletasEnOrden();
         int contarBicicletasAveriadas();
         void agregarBicicleta(Bicicleta bicicleta);
+        void listarBicicletasSegunKilometros(int kilometros);
 
 };
