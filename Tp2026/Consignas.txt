@@ -12,13 +12,13 @@ colisiones. Usar esta función hash que crea conveniente.
 Indicar en el README cuántas colisiones hubo con los datos de prueba y cuál es el factor de carga final.
 
 
-1. Calcular la cantidad de viajes que salieron de una estación dentro de un rango de fechas. 
-2. Buscar todos los viajes de un usuario dado su DNI y mostrar el total de minutos pedaleados. 
+1. Calcular la cantidad de viajes que salieron de una estación dentro de un rango de fechas. ✔
+2. Buscar todos los viajes de un usuario dado su DNI y mostrar el total de minutos pedaleados. ✔
 3. Listar las bicicletas con más de X kilómetros, donde X lo ingresa el usuario, para enviarlas a 
-revisión. 
+revisión. 🤷‍♂️
 4. Implementar una cola de espera por estación: si un usuario quiere retirar una bici y no hay 
 disponibles, se encola. Cuando se devuelve una bici en esa estación, se le asigna al primero de la 
-cola. 
+cola. ✔
 5. Implementar una cola de prioridad (min-heap) para el taller de reparaciones. Cada bicicleta 
 averiada entra con una prioridad del 1 (más urgente) al 3; las eléctricas entran siempre con 
 prioridad 1. Solo se piden dos operaciones: insertar una bici y extraer la más urgente. 
