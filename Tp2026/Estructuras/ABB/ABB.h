@@ -46,4 +46,5 @@ template <typename T> class ABB
     template <typename FuncionAplicada> void recorrer(NodoABB<T>* raiz, FuncionAplicada callback);
 };
 
+#include "ABB.cpp"
 #endif

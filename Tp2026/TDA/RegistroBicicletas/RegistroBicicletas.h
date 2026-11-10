@@ -1,5 +1,5 @@
 #include <Estructuras/ABB/ABB.h>
-#include <Bicicleta.h>
+#include "TDA/Bicicleta/Bicicleta.h"
 
 class RegistroBicicletas{
     private:
