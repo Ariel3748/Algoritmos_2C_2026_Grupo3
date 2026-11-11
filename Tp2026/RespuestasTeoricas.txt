@@ -1,0 +1,10 @@
+Analisis de complejidad punto B
+
+1) Complejidad O(V), se utilizo una lista enlazada ya que no hay ningun orden que aprovechar
+
+2) Complejidad: O(V). Se recorre la lista una vez, se muestran los viajes cuyo dniUsuario coincide y se acumulan los minutos en un contador. No hay forma de saltarse viajes sin una estructura auxiliar, y con una sola pasada alcanza.
+
+4) Complejidad O(1) al ecnolar y desencolar. Se utilizo una lista enlazada con frente y final ya que era lo mas eficiente para el tipo de problema que se plantea, aprovechando el principio FIFO
+
+5)Insertar y extraer cuestan O(log n) en el peor caso, porque el heap es un árbol completo de altura log n y ambas operaciones recorren a lo sumo un camino de la raíz a una hoja
+Se utilizo un array conjunto en memoria y dinamico ya que era mas eficiente que armar un arbol izquierdista que cumpla con la propiedad de heap

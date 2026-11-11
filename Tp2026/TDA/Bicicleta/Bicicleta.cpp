@@ -48,7 +48,11 @@ void Bicicleta::setKilometros(int kilometros) {
 }
 
 void Bicicleta::setPrioridadReparacion(int prioridad) {
-    this->prioridadReparacion = prioridad;
+    if (esElectrica()) {
+        this->prioridadReparacion = 1;  
+    } else {
+        this->prioridadReparacion = prioridad;
+    }
 }
 
 bool Bicicleta::estaAveriada() {

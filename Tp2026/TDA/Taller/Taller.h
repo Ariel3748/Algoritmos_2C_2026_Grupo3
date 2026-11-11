@@ -1,7 +1,7 @@
 #ifndef TALLER_H
 #define TALLER_H
 
-#include "Bicicleta.h"   
+#include "TDA/Bicicleta/Bicicleta.h"    
 
 class Taller {
 private:

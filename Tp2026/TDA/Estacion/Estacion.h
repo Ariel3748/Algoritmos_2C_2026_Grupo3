@@ -1,7 +1,7 @@
 #ifndef ESTACION_H
 #define ESTACION_H
 
-#include "Cola.h" 
+#include "Estructuras/Cola/Cola.h"  
 #include <string>
 
 class Estacion {

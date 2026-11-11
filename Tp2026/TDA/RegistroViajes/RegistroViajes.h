@@ -2,7 +2,7 @@
 #define REGISTROVIAJES_H
 
 #include <string>
-#include "ListaViajes.h"
+#include "Estructuras/LIstaEnlazadaViajes/ListaViajes.h"
 
 class RegistroViajes {
 private:
