@@ -63,6 +63,15 @@ bool Bicicleta::esElectrica() {
     return tipo == "Electrica";
 }
 
+// Overloading de operators para poder hacer comparaciones entre Bicicletas, sin tener que repetir llamados al getter.
+bool Bicicleta::operator<(Bicicleta& b){
+    return this->getBiciId() < b.getBiciId();
+}
+
+bool Bicicleta::operator==(Bicicleta& b){
+    return this->getBiciId() == b.getBiciId();
+}
+
 void Bicicleta::mostrar() {
     std::cout << "Bici " << biciId << " | " << codigoEstacion << " | "
               << tipo << " | " << estado << " | " << kilometros << " km"

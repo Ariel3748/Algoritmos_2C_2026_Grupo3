@@ -29,6 +29,10 @@ public:
     bool estaAveriada();
     bool esElectrica();
     void mostrar();
+
+    bool operator<(Bicicleta& b);
+    bool operator==(Bicicleta& b);
+    
     int getPrioridadReparacion();
     void setPrioridadReparacion(int prioridad);
 };
