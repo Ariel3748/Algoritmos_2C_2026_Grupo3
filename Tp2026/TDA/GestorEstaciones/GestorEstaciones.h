@@ -4,14 +4,16 @@
 #include <string>
 #include "Estructuras/TablaHash/TablaHash.h"
 #include "TDA/Ordenador/Ordenador.h"
+#include "Estructuras/Grafo/Grafo.h"
 
 class GestorEstaciones {
 private:
     TablaHash tabla;
     Ordenador ordenador;
+    Grafo grafo;
 
 public:
-    GestorEstaciones(int tamanioTabla);
+    GestorEstaciones(int tamanioTabla,  int capacidadGrafo);
 
     bool agregarEstacion(std::string codigo, std::string nombre, std::string barrio,
                          int capacidadAnclajes, int bicisDisponibles);
@@ -19,6 +21,9 @@ public:
     bool eliminarEstacion(std::string codigo);
     void listarOrdenadas(bool porCapacidad);
     void listarPocaOcupacion();
+
+    void agregarCiclovia(std::string estacionA, std::string estacionB);
+    void recorridoMasCorto(std::string origen, std::string destino);
 
     int getColisiones();
     double getFactorCarga();

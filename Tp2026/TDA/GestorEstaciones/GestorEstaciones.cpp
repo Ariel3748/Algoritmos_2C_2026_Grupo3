@@ -1,7 +1,8 @@
 #include "GestorEstaciones.h"
 #include <iostream>
 
-GestorEstaciones::GestorEstaciones(int tamanioTabla) : tabla(tamanioTabla) {
+GestorEstaciones::GestorEstaciones(int tamanioTabla, int capacidadGrafo)
+    : tabla(tamanioTabla), grafo(capacidadGrafo) {
 }
 
 bool GestorEstaciones::agregarEstacion(std::string codigo, std::string nombre,
@@ -64,4 +65,20 @@ int GestorEstaciones::getColisiones() {
 
 double GestorEstaciones::getFactorCarga() {
     return tabla.getFactorCarga();
+}
+
+void GestorEstaciones::agregarCiclovia(std::string estacionA, std::string estacionB) {
+    if (tabla.buscar(estacionA) == nullptr || tabla.buscar(estacionB) == nullptr) {
+        std::cout << "Las dos estaciones tienen que existir" << std::endl;
+        return;
+    }
+    grafo.agregarCiclovia(estacionA, estacionB);
+}
+
+void GestorEstaciones::recorridoMasCorto(std::string origen, std::string destino) {
+    if (tabla.buscar(origen) == nullptr || tabla.buscar(destino) == nullptr) {
+        std::cout << "Las dos estaciones tienen que existir" << std::endl;
+        return;
+    }
+    grafo.caminoMasCorto(origen, destino);
 }
