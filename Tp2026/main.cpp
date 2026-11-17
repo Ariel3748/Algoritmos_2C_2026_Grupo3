@@ -1,23 +1,41 @@
-#include <iostream>
-#include "TDA/Estacion/Estacion.h"
 #include "TDA/Bicicleta/Bicicleta.h"
-#include "TDA/Viaje/Viaje.h"
+#include "TDA/Estacion/Estacion.h"
+#include "TDA/GestorEstaciones/GestorEstaciones.h"
 #include "TDA/Menu/Menu.h"
+#include "TDA/Redistribucion/Redistribucion.h"
+#include "TDA/RegistroViajes/RegistroViajes.h"
+#include "TDA/Viaje/Viaje.h"
+#include "TDA/GestorArchivos/GestorArchivos.h"
 
-int main() {
-    Estacion* e = new Estacion("PLZ", "PlazaDeMayo", "Monserrat", 30, 12);
-    Bicicleta* b = new Bicicleta(501, "PLZ", "Mecanica", "OK", 1240);
-    Viaje* v = new Viaje(9001, 501, 30123456, "PLZ", "PAL", 20260310, 25);
+#include <iostream>
+
+int main()
+{
+    // Inicializar clases.
     RegistroBicicletas* registro = new RegistroBicicletas();
-    registro->agregarBicicleta(*b);
-    e->mostrar();
-    b->mostrar();
-    v->mostrar();
+    GestorEstaciones* gestorEstaciones = new GestorEstaciones(50, 50);
+    RegistroViajes* registroViajes = new RegistroViajes();
+    Taller* taller = new Taller();
+    Redistribucion* redistribucion = new Redistribucion();
+    GestorArchivos* gestorArchivos = new GestorArchivos(registro, gestorEstaciones, registroViajes);
 
-    Menu* menu = new Menu(registro);
+    // Crear desde los .txt.
+    gestorArchivos->cargarEstaciones();
+    gestorArchivos->cargarBicicletas();
+    gestorArchivos->cargarViajes();
+    gestorArchivos->cargarCiclovias();
+
+    // Renderizar menu.
+    Menu* menu = new Menu(registro, gestorEstaciones, registroViajes, taller, redistribucion);
+
+    // Limpiar
+    delete gestorEstaciones;
+    delete registro;
+    delete registroViajes;
+    delete taller;
+    delete redistribucion;
+    delete gestorArchivos;
     delete menu;
-    delete e;
-    delete b;
-    delete v;
+
     return 0;
 }
