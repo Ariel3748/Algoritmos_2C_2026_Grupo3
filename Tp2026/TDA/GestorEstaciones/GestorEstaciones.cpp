@@ -30,6 +30,8 @@ bool GestorEstaciones::eliminarEstacion(std::string codigo) {
         std::cout << "No existe la estacion " << codigo << std::endl;
         return false;
     }
+
+    grafo.eliminarEstacion(codigo);
     return true;
 }
 
@@ -81,4 +83,9 @@ void GestorEstaciones::recorridoMasCorto(std::string origen, std::string destino
         return;
     }
     grafo.caminoMasCorto(origen, destino);
+}
+
+Estacion* GestorEstaciones::buscarEstacion(std::string codigo)
+{
+    return tabla.buscar(codigo);
 }

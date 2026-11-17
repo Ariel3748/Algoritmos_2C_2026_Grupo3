@@ -21,7 +21,7 @@ public:
     bool eliminarEstacion(std::string codigo);
     void listarOrdenadas(bool porCapacidad);
     void listarPocaOcupacion();
-
+    Estacion* buscarEstacion(std::string codigo);
     void agregarCiclovia(std::string estacionA, std::string estacionB);
     void recorridoMasCorto(std::string origen, std::string destino);
 
