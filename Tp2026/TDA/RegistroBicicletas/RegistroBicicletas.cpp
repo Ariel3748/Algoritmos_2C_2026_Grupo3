@@ -8,6 +8,11 @@ Bicicleta* RegistroBicicletas::buscarBicicleta(int biciId)
     return &nodo->getValor();
 }
 
+int RegistroBicicletas::getAlturaArbol()
+{
+    return this->arbol.getAlturaArbol(this->arbol.getRaiz());
+}
+
 void RegistroBicicletas::listarBicicletasEnOrden()
 {
     auto listar = [](NodoABB<Bicicleta>* NodoBicicleta) {

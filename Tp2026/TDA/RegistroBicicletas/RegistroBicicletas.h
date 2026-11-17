@@ -1,3 +1,6 @@
+#ifndef REGISTROBICICLETAS_H
+#define REGISTROBICICLETAS_H
+
 #include <Estructuras/ABB/ABB.h>
 #include "TDA/Bicicleta/Bicicleta.h"
 
@@ -11,5 +14,8 @@ class RegistroBicicletas{
         int contarBicicletasAveriadas();
         void agregarBicicleta(Bicicleta bicicleta);
         void listarBicicletasSegunKilometros(int kilometros);
+        int getAlturaArbol();
 
 };
+
+#endif
