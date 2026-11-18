@@ -1,6 +1,6 @@
 #ifndef LISTA_H
 #define LISTA_H
-#include <NodoLista.h>
+#include "./Estructuras/Lista/NodoLista.h"
 
 template <typename T>
 class Lista {

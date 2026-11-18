@@ -89,3 +89,12 @@ Estacion* GestorEstaciones::buscarEstacion(std::string codigo)
 {
     return tabla.buscar(codigo);
 }
+
+
+int GestorEstaciones::getTamanio() {
+    return tabla.getTamanio();
+}
+
+int GestorEstaciones::getCantidad() {
+    return tabla.getCantidad();
+}

@@ -1,3 +1,12 @@
 PLZ PlazaDeMayo Monserrat 30 12
-PAL ParqueTresDeFebrero Palermo 25 35
-CAB PrimeraJunta Caballito 40 4
+PAL ParqueTresDeFebrero Palermo 40 35
+CAB PrimeraJunta Caballito 25 4
+RET Retiro Retiro 20 5
+CON Congreso Balvanera 20 18
+BOE Boedo Boedo 15 10
+REC Recoleta Recoleta 35 28
+BEL Belgrano Belgrano 30 3
+VIL VillaUrquiza VillaUrquiza 25 20
+SAN SanTelmo SanTelmo 20 2
+PMA PuertoMadero PuertoMadero 30 25
+FLO Flores Flores 25 9

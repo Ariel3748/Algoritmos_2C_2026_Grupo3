@@ -27,6 +27,9 @@ public:
 
     int getColisiones();
     double getFactorCarga();
+
+    int getTamanio();
+    int getCantidad();
 };
 
 #endif

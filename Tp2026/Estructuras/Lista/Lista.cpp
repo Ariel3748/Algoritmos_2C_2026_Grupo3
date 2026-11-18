@@ -1,4 +1,4 @@
-#include <Lista.h>
+#include "./Estructuras/Lista/Lista.h"
 
 template <typename T> Lista<T>::Lista()
 {
