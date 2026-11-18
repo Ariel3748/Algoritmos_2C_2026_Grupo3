@@ -1,0 +1,304 @@
+==89270== Memcheck, a memory error detector
+==89270== Copyright (C) 2002-2024, and GNU GPL'd, by Julian Seward et al.
+==89270== Using Valgrind-3.25.1 and LibVEX; rerun with -h for copyright info
+==89270== Command: ./app
+==89270== Parent PID: 87929
+==89270== 
+==89270== 
+==89270== Process terminating with default action of signal 2 (SIGINT)
+==89270==    at 0x4DE5F1D: internal_syscall_cancel (sysdep-cancel.h:44)
+==89270==    by 0x4DE5F1D: syscall_cancel (sysdep-cancel.h:79)
+==89270==    by 0x4DE5F1D: read (read.c:26)
+==89270==    by 0x4D63157: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:569)
+==89270==    by 0x4D658B2: _IO_default_uflow (genops.c:388)
+==89270==    by 0x49C83F9: syncgetc (stdio_sync_filebuf.h:228)
+==89270==    by 0x49C83F9: __gnu_cxx::stdio_sync_filebuf<char, std::char_traits<char> >::underflow() (stdio_sync_filebuf.h:136)
+==89270==    by 0x49D79F1: sgetc (streambuf:353)
+==89270==    by 0x49D79F1: sgetc (streambuf:347)
+==89270==    by 0x49D79F1: snextc (streambuf:312)
+==89270==    by 0x49D79F1: std::istream::sentry::sentry(std::istream&, bool) (istream.tcc:71)
+==89270==    by 0x49D7CE0: std::istream::operator>>(int&) (istream.tcc:188)
+==89270==    by 0x40055DE: Menu::renderMenuPrincipal() (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x400548B: Menu::Menu(RegistroBicicletas*, GestorEstaciones*, RegistroViajes*, Taller*, Redistribucion*) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x400249B: main (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270== 
+==89270== HEAP SUMMARY:
+==89270==     in use at exit: 96,816 bytes in 143 blocks
+==89270==   total heap usage: 154 allocs, 11 frees, 131,543 bytes allocated
+==89270== 
+==89270== 1 bytes in 1 blocks are still reachable in loss record 1 of 31
+==89270==    at 0x4887093: operator new(unsigned long) (vg_replace_malloc.c:487)
+==89270==    by 0x40023D5: main (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270== 
+==89270== 8 bytes in 1 blocks are still reachable in loss record 2 of 31
+==89270==    at 0x4887093: operator new(unsigned long) (vg_replace_malloc.c:487)
+==89270==    by 0x40022EF: main (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270== 
+==89270== 16 bytes in 1 blocks are still reachable in loss record 3 of 31
+==89270==    at 0x4887093: operator new(unsigned long) (vg_replace_malloc.c:487)
+==89270==    by 0x4002364: main (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270== 
+==89270== 16 bytes in 1 blocks are still reachable in loss record 4 of 31
+==89270==    at 0x4887093: operator new(unsigned long) (vg_replace_malloc.c:487)
+==89270==    by 0x40023A0: main (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270== 
+==89270== 31 bytes in 1 blocks are still reachable in loss record 5 of 31
+==89270==    at 0x4887093: operator new(unsigned long) (vg_replace_malloc.c:487)
+==89270==    by 0x4003782: std::__new_allocator<char>::allocate(unsigned long, void const*) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x400360C: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_S_allocate(std::allocator<char>&, unsigned long) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x40034CF: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_create(unsigned long&, unsigned long) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x400369B: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_assign(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x40032A1: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::assign(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x4002F5C: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::operator=(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x400380C: Estacion::Estacion(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int, int) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x4004A07: GestorEstaciones::agregarEstacion(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int, int) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x4004040: GestorArchivos::cargarEstaciones() (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x400243F: main (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270== 
+==89270== 32 bytes in 2 blocks are still reachable in loss record 6 of 31
+==89270==    at 0x4887093: operator new(unsigned long) (vg_replace_malloc.c:487)
+==89270==    by 0x400ABAA: ListaViajes::agregar(Viaje*) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x400950A: RegistroViajes::agregar(Viaje*) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x40045DB: GestorArchivos::cargarViajes() (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x4002457: main (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270== 
+==89270== 40 bytes in 1 blocks are still reachable in loss record 7 of 31
+==89270==    at 0x4887093: operator new(unsigned long) (vg_replace_malloc.c:487)
+==89270==    by 0x40023F9: main (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270== 
+==89270== 48 bytes in 1 blocks are still reachable in loss record 8 of 31
+==89270==    at 0x4887093: operator new(unsigned long) (vg_replace_malloc.c:487)
+==89270==    by 0x400246D: main (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270== 
+==89270== 56 bytes in 1 blocks are still reachable in loss record 9 of 31
+==89270==    at 0x4887093: operator new(unsigned long) (vg_replace_malloc.c:487)
+==89270==    by 0x4002325: main (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270== 
+==89270== 80 bytes in 1 blocks are still reachable in loss record 10 of 31
+==89270==    at 0x4888713: operator new[](unsigned long) (vg_replace_malloc.c:729)
+==89270==    by 0x40097B9: Taller::Taller() (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x40023B1: main (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270== 
+==89270== 128 bytes in 1 blocks are still reachable in loss record 11 of 31
+==89270==    at 0x4887093: operator new(unsigned long) (vg_replace_malloc.c:487)
+==89270==    by 0x400928A: ABB<Bicicleta>::insertarNodo(Bicicleta, NodoABB<Bicicleta>*&) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x4008CC7: RegistroBicicletas::agregarBicicleta(Bicicleta) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x4003D1F: GestorArchivos::cargarBicicletas() (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x400244B: main (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270== 
+==89270== 128 bytes in 1 blocks are still reachable in loss record 12 of 31
+==89270==    at 0x4887093: operator new(unsigned long) (vg_replace_malloc.c:487)
+==89270==    by 0x400928A: ABB<Bicicleta>::insertarNodo(Bicicleta, NodoABB<Bicicleta>*&) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x40093C8: ABB<Bicicleta>::insertarNodo(Bicicleta, NodoABB<Bicicleta>*&) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x4008CC7: RegistroBicicletas::agregarBicicleta(Bicicleta) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x4003D1F: GestorArchivos::cargarBicicletas() (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x400244B: main (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270== 
+==89270== 128 bytes in 1 blocks are still reachable in loss record 13 of 31
+==89270==    at 0x4887093: operator new(unsigned long) (vg_replace_malloc.c:487)
+==89270==    by 0x400928A: ABB<Bicicleta>::insertarNodo(Bicicleta, NodoABB<Bicicleta>*&) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x40093C8: ABB<Bicicleta>::insertarNodo(Bicicleta, NodoABB<Bicicleta>*&) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x40093C8: ABB<Bicicleta>::insertarNodo(Bicicleta, NodoABB<Bicicleta>*&) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x4008CC7: RegistroBicicletas::agregarBicicleta(Bicicleta) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x4003D1F: GestorArchivos::cargarBicicletas() (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x400244B: main (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270== 
+==89270== 128 bytes in 1 blocks are still reachable in loss record 14 of 31
+==89270==    at 0x4887093: operator new(unsigned long) (vg_replace_malloc.c:487)
+==89270==    by 0x400928A: ABB<Bicicleta>::insertarNodo(Bicicleta, NodoABB<Bicicleta>*&) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x40093C8: ABB<Bicicleta>::insertarNodo(Bicicleta, NodoABB<Bicicleta>*&) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x40093C8: ABB<Bicicleta>::insertarNodo(Bicicleta, NodoABB<Bicicleta>*&) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x40093C8: ABB<Bicicleta>::insertarNodo(Bicicleta, NodoABB<Bicicleta>*&) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x4008CC7: RegistroBicicletas::agregarBicicleta(Bicicleta) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x4003D1F: GestorArchivos::cargarBicicletas() (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x400244B: main (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270== 
+==89270== 128 bytes in 1 blocks are still reachable in loss record 15 of 31
+==89270==    at 0x4887093: operator new(unsigned long) (vg_replace_malloc.c:487)
+==89270==    by 0x400928A: ABB<Bicicleta>::insertarNodo(Bicicleta, NodoABB<Bicicleta>*&) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x40093C8: ABB<Bicicleta>::insertarNodo(Bicicleta, NodoABB<Bicicleta>*&) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x40093C8: ABB<Bicicleta>::insertarNodo(Bicicleta, NodoABB<Bicicleta>*&) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x40093C8: ABB<Bicicleta>::insertarNodo(Bicicleta, NodoABB<Bicicleta>*&) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x40093C8: ABB<Bicicleta>::insertarNodo(Bicicleta, NodoABB<Bicicleta>*&) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x4008CC7: RegistroBicicletas::agregarBicicleta(Bicicleta) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x4003D1F: GestorArchivos::cargarBicicletas() (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x400244B: main (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270== 
+==89270== 128 bytes in 1 blocks are still reachable in loss record 16 of 31
+==89270==    at 0x4887093: operator new(unsigned long) (vg_replace_malloc.c:487)
+==89270==    by 0x400928A: ABB<Bicicleta>::insertarNodo(Bicicleta, NodoABB<Bicicleta>*&) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x40093C8: ABB<Bicicleta>::insertarNodo(Bicicleta, NodoABB<Bicicleta>*&) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x40093C8: ABB<Bicicleta>::insertarNodo(Bicicleta, NodoABB<Bicicleta>*&) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x40093C8: ABB<Bicicleta>::insertarNodo(Bicicleta, NodoABB<Bicicleta>*&) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x40093C8: ABB<Bicicleta>::insertarNodo(Bicicleta, NodoABB<Bicicleta>*&) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x40093C8: ABB<Bicicleta>::insertarNodo(Bicicleta, NodoABB<Bicicleta>*&) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x4008CC7: RegistroBicicletas::agregarBicicleta(Bicicleta) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x4003D1F: GestorArchivos::cargarBicicletas() (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x400244B: main (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270== 
+==89270== 128 bytes in 1 blocks are still reachable in loss record 17 of 31
+==89270==    at 0x4887093: operator new(unsigned long) (vg_replace_malloc.c:487)
+==89270==    by 0x400928A: ABB<Bicicleta>::insertarNodo(Bicicleta, NodoABB<Bicicleta>*&) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x40093C8: ABB<Bicicleta>::insertarNodo(Bicicleta, NodoABB<Bicicleta>*&) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x40093C8: ABB<Bicicleta>::insertarNodo(Bicicleta, NodoABB<Bicicleta>*&) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x40093C8: ABB<Bicicleta>::insertarNodo(Bicicleta, NodoABB<Bicicleta>*&) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x40093C8: ABB<Bicicleta>::insertarNodo(Bicicleta, NodoABB<Bicicleta>*&) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x40093C8: ABB<Bicicleta>::insertarNodo(Bicicleta, NodoABB<Bicicleta>*&) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x40093C8: ABB<Bicicleta>::insertarNodo(Bicicleta, NodoABB<Bicicleta>*&) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x4008CC7: RegistroBicicletas::agregarBicicleta(Bicicleta) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x4003D1F: GestorArchivos::cargarBicicletas() (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x400244B: main (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270== 
+==89270== 128 bytes in 1 blocks are still reachable in loss record 18 of 31
+==89270==    at 0x4887093: operator new(unsigned long) (vg_replace_malloc.c:487)
+==89270==    by 0x400928A: ABB<Bicicleta>::insertarNodo(Bicicleta, NodoABB<Bicicleta>*&) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x40093C8: ABB<Bicicleta>::insertarNodo(Bicicleta, NodoABB<Bicicleta>*&) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x40093C8: ABB<Bicicleta>::insertarNodo(Bicicleta, NodoABB<Bicicleta>*&) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x40093C8: ABB<Bicicleta>::insertarNodo(Bicicleta, NodoABB<Bicicleta>*&) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x40093C8: ABB<Bicicleta>::insertarNodo(Bicicleta, NodoABB<Bicicleta>*&) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x40093C8: ABB<Bicicleta>::insertarNodo(Bicicleta, NodoABB<Bicicleta>*&) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x40093C8: ABB<Bicicleta>::insertarNodo(Bicicleta, NodoABB<Bicicleta>*&) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x40093C8: ABB<Bicicleta>::insertarNodo(Bicicleta, NodoABB<Bicicleta>*&) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x4008CC7: RegistroBicicletas::agregarBicicleta(Bicicleta) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x4003D1F: GestorArchivos::cargarBicicletas() (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x400244B: main (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270== 
+==89270== 128 bytes in 1 blocks are still reachable in loss record 19 of 31
+==89270==    at 0x4887093: operator new(unsigned long) (vg_replace_malloc.c:487)
+==89270==    by 0x400928A: ABB<Bicicleta>::insertarNodo(Bicicleta, NodoABB<Bicicleta>*&) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x40093C8: ABB<Bicicleta>::insertarNodo(Bicicleta, NodoABB<Bicicleta>*&) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x40093C8: ABB<Bicicleta>::insertarNodo(Bicicleta, NodoABB<Bicicleta>*&) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x40093C8: ABB<Bicicleta>::insertarNodo(Bicicleta, NodoABB<Bicicleta>*&) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x40093C8: ABB<Bicicleta>::insertarNodo(Bicicleta, NodoABB<Bicicleta>*&) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x40093C8: ABB<Bicicleta>::insertarNodo(Bicicleta, NodoABB<Bicicleta>*&) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x40093C8: ABB<Bicicleta>::insertarNodo(Bicicleta, NodoABB<Bicicleta>*&) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x40093C8: ABB<Bicicleta>::insertarNodo(Bicicleta, NodoABB<Bicicleta>*&) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x40093C8: ABB<Bicicleta>::insertarNodo(Bicicleta, NodoABB<Bicicleta>*&) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x4008CC7: RegistroBicicletas::agregarBicicleta(Bicicleta) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x4003D1F: GestorArchivos::cargarBicicletas() (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270== 
+==89270== 128 bytes in 1 blocks are still reachable in loss record 20 of 31
+==89270==    at 0x4887093: operator new(unsigned long) (vg_replace_malloc.c:487)
+==89270==    by 0x400928A: ABB<Bicicleta>::insertarNodo(Bicicleta, NodoABB<Bicicleta>*&) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x40093C8: ABB<Bicicleta>::insertarNodo(Bicicleta, NodoABB<Bicicleta>*&) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x40093C8: ABB<Bicicleta>::insertarNodo(Bicicleta, NodoABB<Bicicleta>*&) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x40093C8: ABB<Bicicleta>::insertarNodo(Bicicleta, NodoABB<Bicicleta>*&) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x40093C8: ABB<Bicicleta>::insertarNodo(Bicicleta, NodoABB<Bicicleta>*&) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x40093C8: ABB<Bicicleta>::insertarNodo(Bicicleta, NodoABB<Bicicleta>*&) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x40093C8: ABB<Bicicleta>::insertarNodo(Bicicleta, NodoABB<Bicicleta>*&) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x40093C8: ABB<Bicicleta>::insertarNodo(Bicicleta, NodoABB<Bicicleta>*&) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x40093C8: ABB<Bicicleta>::insertarNodo(Bicicleta, NodoABB<Bicicleta>*&) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x40093C8: ABB<Bicicleta>::insertarNodo(Bicicleta, NodoABB<Bicicleta>*&) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x4008CC7: RegistroBicicletas::agregarBicicleta(Bicicleta) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270== 
+==89270== 176 bytes in 2 blocks are still reachable in loss record 21 of 31
+==89270==    at 0x4887093: operator new(unsigned long) (vg_replace_malloc.c:487)
+==89270==    by 0x40044FF: GestorArchivos::cargarViajes() (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x4002457: main (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270== 
+==89270== 192 bytes in 12 blocks are still reachable in loss record 22 of 31
+==89270==    at 0x4887093: operator new(unsigned long) (vg_replace_malloc.c:487)
+==89270==    by 0x400A263: TablaHash::agregar(Estacion*) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x4004A18: GestorEstaciones::agregarEstacion(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int, int) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x4004040: GestorArchivos::cargarEstaciones() (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x400243F: main (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270== 
+==89270== 400 bytes in 1 blocks are still reachable in loss record 23 of 31
+==89270==    at 0x4888713: operator new[](unsigned long) (vg_replace_malloc.c:729)
+==89270==    by 0x4009FE0: TablaHash::TablaHash(int) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x400486F: GestorEstaciones::GestorEstaciones(int, int) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x4002340: main (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270== 
+==89270== 400 bytes in 1 blocks are still reachable in loss record 24 of 31
+==89270==    at 0x4888713: operator new[](unsigned long) (vg_replace_malloc.c:729)
+==89270==    by 0x400ADFC: Grafo::Grafo(int) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x4004884: GestorEstaciones::GestorEstaciones(int, int) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x4002340: main (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270== 
+==89270== 1,024 bytes in 1 blocks are still reachable in loss record 25 of 31
+==89270==    at 0x48868A8: malloc (vg_replace_malloc.c:446)
+==89270==    by 0x4D55097: _IO_file_doallocate (filedoalloc.c:91)
+==89270==    by 0x4D657C5: _IO_doallocbuf (genops.c:373)
+==89270==    by 0x4D657C5: _IO_doallocbuf (genops.c:368)
+==89270==    by 0x4D63588: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:797)
+==89270==    by 0x4D6427F: _IO_new_file_xsputn (fileops.c:1323)
+==89270==    by 0x4D6427F: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1276)
+==89270==    by 0x4D5692A: fwrite (iofwrite.c:44)
+==89270==    by 0x49F801B: sputn (streambuf:460)
+==89270==    by 0x49F801B: __ostream_write<char, std::char_traits<char> > (ostream_insert.h:58)
+==89270==    by 0x49F801B: std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long) (ostream_insert.h:109)
+==89270==    by 0x49F8411: std::basic_ostream<char, std::char_traits<char> >& std::operator<< <std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*) (ostream.h:739)
+==89270==    by 0x40054B4: Menu::renderMenuPrincipal() (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x400548B: Menu::Menu(RegistroBicicletas*, GestorEstaciones*, RegistroViajes*, Taller*, Redistribucion*) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x400249B: main (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270== 
+==89270== 1,024 bytes in 1 blocks are still reachable in loss record 26 of 31
+==89270==    at 0x48868A8: malloc (vg_replace_malloc.c:446)
+==89270==    by 0x4D55097: _IO_file_doallocate (filedoalloc.c:91)
+==89270==    by 0x4D657C5: _IO_doallocbuf (genops.c:373)
+==89270==    by 0x4D657C5: _IO_doallocbuf (genops.c:368)
+==89270==    by 0x4D6320E: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:538)
+==89270==    by 0x4D658B2: _IO_default_uflow (genops.c:388)
+==89270==    by 0x49C83F9: syncgetc (stdio_sync_filebuf.h:228)
+==89270==    by 0x49C83F9: __gnu_cxx::stdio_sync_filebuf<char, std::char_traits<char> >::underflow() (stdio_sync_filebuf.h:136)
+==89270==    by 0x49D7A06: sgetc (streambuf:353)
+==89270==    by 0x49D7A06: sgetc (streambuf:347)
+==89270==    by 0x49D7A06: std::istream::sentry::sentry(std::istream&, bool) (istream.tcc:65)
+==89270==    by 0x49D7CE0: std::istream::operator>>(int&) (istream.tcc:188)
+==89270==    by 0x40055DE: Menu::renderMenuPrincipal() (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x400548B: Menu::Menu(RegistroBicicletas*, GestorEstaciones*, RegistroViajes*, Taller*, Redistribucion*) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x400249B: main (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270== 
+==89270== 1,536 bytes in 12 blocks are still reachable in loss record 27 of 31
+==89270==    at 0x4887093: operator new(unsigned long) (vg_replace_malloc.c:487)
+==89270==    by 0x400498D: GestorEstaciones::agregarEstacion(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int, int) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x4004040: GestorArchivos::cargarEstaciones() (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x400243F: main (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270== 
+==89270== 1,608 bytes in 1 blocks are still reachable in loss record 28 of 31
+==89270==    at 0x4888713: operator new[](unsigned long) (vg_replace_malloc.c:729)
+==89270==    by 0x400AD69: Grafo::Grafo(int) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x4004884: GestorEstaciones::GestorEstaciones(int, int) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x4002340: main (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270== 
+==89270== 5,120 bytes in 40 blocks are still reachable in loss record 29 of 31
+==89270==    at 0x4887093: operator new(unsigned long) (vg_replace_malloc.c:487)
+==89270==    by 0x400928A: ABB<Bicicleta>::insertarNodo(Bicicleta, NodoABB<Bicicleta>*&) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x40093C8: ABB<Bicicleta>::insertarNodo(Bicicleta, NodoABB<Bicicleta>*&) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x40093C8: ABB<Bicicleta>::insertarNodo(Bicicleta, NodoABB<Bicicleta>*&) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x40093C8: ABB<Bicicleta>::insertarNodo(Bicicleta, NodoABB<Bicicleta>*&) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x40093C8: ABB<Bicicleta>::insertarNodo(Bicicleta, NodoABB<Bicicleta>*&) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x40093C8: ABB<Bicicleta>::insertarNodo(Bicicleta, NodoABB<Bicicleta>*&) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x40093C8: ABB<Bicicleta>::insertarNodo(Bicicleta, NodoABB<Bicicleta>*&) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x40093C8: ABB<Bicicleta>::insertarNodo(Bicicleta, NodoABB<Bicicleta>*&) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x40093C8: ABB<Bicicleta>::insertarNodo(Bicicleta, NodoABB<Bicicleta>*&) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x40093C8: ABB<Bicicleta>::insertarNodo(Bicicleta, NodoABB<Bicicleta>*&) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x40093C8: ABB<Bicicleta>::insertarNodo(Bicicleta, NodoABB<Bicicleta>*&) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270== 
+==89270== 10,000 bytes in 50 blocks are still reachable in loss record 30 of 31
+==89270==    at 0x4888713: operator new[](unsigned long) (vg_replace_malloc.c:729)
+==89270==    by 0x400AE4E: Grafo::Grafo(int) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x4004884: GestorEstaciones::GestorEstaciones(int, int) (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270==    by 0x4002340: main (in /home/bukk/study/Algoritmos_2C_2026_Grupo3/Tp2026/app)
+==89270== 
+==89270== 73,728 bytes in 1 blocks are still reachable in loss record 31 of 31
+==89270==    at 0x48868A8: malloc (vg_replace_malloc.c:446)
+==89270==    by 0x494E94F: pool (eh_alloc.cc:235)
+==89270==    by 0x494E94F: __static_initialization_and_destruction_0 (eh_alloc.cc:373)
+==89270==    by 0x494E94F: _GLOBAL__sub_I_eh_alloc.cc (eh_alloc.cc:456)
+==89270==    by 0x40181EE: call_init (dl-init.c:74)
+==89270==    by 0x40181EE: call_init (dl-init.c:26)
+==89270==    by 0x40182CC: _dl_init (dl-init.c:121)
+==89270==    by 0x403387F: ??? (in /usr/lib/ld-linux-x86-64.so.2)
+==89270== 
+==89270== LEAK SUMMARY:
+==89270==    definitely lost: 0 bytes in 0 blocks
+==89270==    indirectly lost: 0 bytes in 0 blocks
+==89270==      possibly lost: 0 bytes in 0 blocks
+==89270==    still reachable: 96,816 bytes in 143 blocks
+==89270==                       of which reachable via heuristic:
+==89270==                         newarray           : 1,608 bytes in 1 blocks
+==89270==         suppressed: 0 bytes in 0 blocks
+==89270== 
+==89270== For lists of detected and suppressed errors, rerun with: -s
+==89270== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
