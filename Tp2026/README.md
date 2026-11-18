@@ -49,6 +49,7 @@ Tp2026/
 │   ├── RegistroBicicletas/
 │   ├── RegistroViajes/
 │   └── GestorEstaciones/
+│   └── GestorArchivos/
 └── Estructuras/              # Estructuras de datos implementadas a mano
     ├── Cola/
     ├── LIstaEnlazadaViajes/
@@ -159,6 +160,10 @@ Resuelve el punto D con **backtracking**. Recibe la capacidad del camión y una 
 #### `Menu`
  
 Menú por consola con submenús por sección: Estaciones (A), Viajes y cola de espera (B), Registro de bicicletas (C) y Redistribución (D). 
+
+#### `GestorArchivos`
+
+Carga nuestra data desde los archivos .txt a las clases correspondientes.
  
 #### `main.cpp`
  Carga de los cuatro archivos de entrada, creación del menú y liberación de memoria.
